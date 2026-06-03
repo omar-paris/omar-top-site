@@ -1,0 +1,136 @@
+site_name: 'OmarTop — Doctrine'
+site_url: 'https://top.omar.paris'
+site_description: 'Doctrine OmarTop — 9 phases × 58 standards, source de vérité de la méthode Omar.Paris pour ses clients artisans.'
+site_author: 'Omar.Paris'
+
+# Repo (futur)
+repo_url: 'https://github.com/omar-paris/omar-top-site'
+repo_name: 'omar-paris/omar-top-site'
+edit_uri: 'edit/main/docs/'
+
+# Build
+docs_dir: docs
+site_dir: site
+strict: false
+
+# Theme
+theme:
+  name: material
+  language: fr
+  features:
+    # Navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    # Search
+    - search.highlight
+    - search.suggest
+    - search.share
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+  palette:
+    # Light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode sombre
+    # Dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode clair
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/git-alt
+    edit: material/pencil
+    view: material/eye
+
+# Plugins
+plugins:
+  - search:
+      lang:
+        - fr
+        - en
+  - awesome-pages
+  - mermaid2
+
+# Extensions Markdown
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables
+  # PyMdown
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Navigation (6 sections — surchargée par awesome-pages si .pages présent)
+nav:
+  - Accueil: index.md
+  - Vision: vision/index.md
+  - Phases OmarTop: phases/index.md
+  - Catalogue: catalogue/index.md
+  - Doctrine: doctrine/index.md
+  - Outils: outils/index.md
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://omar.paris
+      name: Omar.Paris
+  generator: false
+
+copyright: 'Copyright &copy; 2026 Omar.Paris — Tailnet-only internal doctrine'
