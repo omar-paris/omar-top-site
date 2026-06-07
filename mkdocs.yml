@@ -1,6 +1,6 @@
 site_name: 'OmarTop — Doctrine'
 site_url: 'https://top.omar.paris'
-site_description: 'Doctrine OmarTop — 9 phases × 58 standards, source de vérité de la méthode Omar.Paris pour ses clients artisans.'
+site_description: 'Doctrine OmarTop — modèle VPS OA, 9 phases × 58 standards, source de vérité pour Hub, Lab et QG.'
 site_author: 'Omar.Paris'
 
 # Repo (futur)
@@ -119,11 +119,35 @@ markdown_extensions:
 # Navigation (6 sections — surchargée par awesome-pages si .pages présent)
 nav:
   - Accueil: index.md
-  - Vision: vision/index.md
-  - Phases OmarTop: phases/index.md
-  - Catalogue: catalogue/index.md
-  - Doctrine: doctrine/index.md
-  - Outils: outils/index.md
+  - Vision:
+      - Vue d'ensemble: vision/index.md
+      - Piliers (Business + Personnel): vision/piliers.md
+      - Sites publics OA: vision/sites-oa.md
+  - Phases OmarTop:
+      - Vue d'ensemble: phases/index.md
+      - P0 — Commerce: phases/P0.md
+      - P1 — Provisioning: phases/P1.md
+      - P1.5 — Audit pré-bootstrap: phases/P1.5.md
+      - P2 — L0 stack: phases/P2.md
+      - P3 — L1 baseline: phases/P3.md
+      - P3.5 — Vault setup: phases/P3.5.md
+      - P4 — Activation: phases/P4.md
+      - P5 — Maintenance: phases/P5.md
+      - P6 — Export: phases/P6.md
+  - Catalogue:
+      - Vue d'ensemble: catalogue/index.md
+      - L1 baseline (18 apps): catalogue/L1-baseline.md
+  - Doctrine:
+      - Vue d'ensemble: doctrine/index.md
+      - Modèle VPS OA: doctrine/modele-vps.md
+      - Multi-Vault (A2): doctrine/multi-vault.md
+      - AppIntake (workflow audit): doctrine/app-intake.md
+      - InstallWizard (install.omar.paris): doctrine/install-wizard.md
+  - Outils:
+      - Vue d'ensemble: outils/index.md
+      - oa-doctor: outils/oa-doctor.md
+      - oa-screenshot: outils/oa-screenshot.md
+      - oa-app-intake: outils/oa-app-intake.md
 
 # Extra
 extra:
