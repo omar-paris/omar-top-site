@@ -1,0 +1,33 @@
+
+# omar-top-site — Doctrine OmarTop (NEW 3 juin 2026 par CCMA)
+# Strategy : Tailnet-only (coherent avec hub.omar.paris et autres vhosts OA)
+# Source : /home/omar/23-Offre/actifs/omar-top-site/site/ (build MkDocs)
+# Deploy : sudo bash /home/omar/23-Offre/actifs/omar-top-site/scripts/deploy.sh
+# Target : /var/www/top-omar/ (owned caddy:caddy 755/644)
+#
+# TLS : tls internal (cert auto-signe Caddy) car pas de DNS public encore.
+# Une fois DNS top.omar.paris cree, retirer 'tls internal' pour basculer sur
+# Let's Encrypt (Caddy fera l'ACME challenge sur :80 ouvert au monde).
+top.omar.paris {
+	import tailnet_only
+	import security_headers
+
+	tls internal
+
+	root * /var/www/top-omar
+	file_server
+
+	encode gzip zstd
+
+	# Cache assets MkDocs (CSS/JS/fonts hash dans le nom = safe long cache)
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=86400, must-revalidate"
+
+	log {
+		output file /var/log/caddy/top-omar-paris.log {
+			roll_size 10mb
+			roll_keep 7
+		}
+		format json
+	}
+}

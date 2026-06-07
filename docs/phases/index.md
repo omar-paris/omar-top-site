@@ -1,30 +1,47 @@
+<!--
+  AUTO-GENERATED — DO NOT EDIT MANUALLY
+  Source : phases-spec.yaml
+  Generator : scripts/build-from-yaml.py
+  Re-run : /home/omar/.local/venv-mkdocs/bin/python scripts/build-from-yaml.py
+-->
+
+
 # Phases OmarTop
 
-La methode OmarTop est structuree en **9 phases** (P0 a P8) couvrant **58 standards** au total.
+La methode OmarTop est structuree en **9 phases** couvrant **58 standards** au total (`42` obligatoires, `16` cibles).
 
-Source de verite : `/home/omar/23-Offre/actifs/omar-top/phases-spec.yaml`
+> Source de verite : `/home/omar/23-Offre/actifs/omar-top/phases-spec.yaml` — version `0.1` (2026-06-02)
 
-## Vue d'ensemble
+## Matrice
 
-| Phase | Theme | Standards |
-|-------|-------|-----------|
-| **P0** | Commerce — prise en charge initiale | a generer depuis YAML |
-| **P1** | Identite & filesystem client | a generer |
-| **P2** | Comptabilite & facturation | a generer |
-| **P3** | Communication client | a generer |
-| **P4** | Marketing & presence en ligne | a generer |
-| **P5** | Operations & runbooks | a generer |
-| **P6** | Export multi-canal | a generer |
-| **P7** | Mesure & amelioration | a generer |
-| **P8** | Cloture & passation | a generer |
+| Phase | Theme | Standards | Required | Target |
+|-------|-------|-----------|----------|--------|
+| 💼 **[P0](P0.md)** | Commerce | 4 | 2 | 2 |
+| 🖥️ **[P1](P1.md)** | Provisioning | 5 | 4 | 1 |
+| 🔍 **[P1.5](P1.5.md)** | Audit pre-bootstrap | 6 | 4 | 2 |
+| 🧱 **[P2](P2.md)** | L0 stack | 9 | 6 | 3 |
+| 📚 **[P3](P3.md)** | L1 baseline | 7 | 6 | 1 |
+| 🔐 **[P3.5](P3.5.md)** | Vault setup | 10 | 8 | 2 |
+| 🪽 **[P4](P4.md)** | Activation | 4 | 4 | 0 |
+| 🩺 **[P5](P5.md)** | Maintenance | 7 | 3 | 4 |
+| 📦 **[P6](P6.md)** | Export | 6 | 5 | 1 |
+| | **Total** | **58** | **42** | **16** |
 
-!!! tip "Generation automatique"
-    Cette page sera regeneree depuis `phases-spec.yaml` via `mkdocs-gen-files` ou un script de build dedie. Pour l'instant, contenu statique.
+## Roadmap (phases envisagees V1+)
 
-## Audit
+| Phase | Nom | Quand | Rationale |
+|-------|-----|-------|-----------|
+| `P7` | Audit conformite | `V1` | Audit RGPD + ISO 27001-like + AI Act. Devient critique des qu'on a >5 clients. |
+| `P8` | Federation | `V2` | Permettre a une autre equipe d'operer son propre Hub OA (marque blanche). |
 
-L'audit d'un VPS client contre les 9 phases se fait via **`oa-doctor`** (voir [Outils](../outils/index.md)).
+## Audit global
+
+```bash
+oa-doctor --check-all
+```
+
+L'outil [`oa-doctor`](../outils/index.md) audite chaque phase et calcule le pourcentage de configuration du VPS.
 
 ---
 
-*Pages detaillees par phase a generer.*
+*Page auto-generee depuis `phases-spec.yaml`. Editer le YAML, pas ce fichier.*
